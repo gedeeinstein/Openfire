@@ -1,6 +1,6 @@
 #!/bin/bash
-export OPENFIRE_HOME=/usr/local/openfire
-export JAVA_HOME=/Library/Java/Home
+export OPENFIRE_HOME="/usr/local/openfire"
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
 
 function shutdown() 
 {
