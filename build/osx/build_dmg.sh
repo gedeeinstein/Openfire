@@ -3,7 +3,7 @@
 # shellcheck disable=SC2155,SC2164
 set -euox pipefail
 
-export OPENFIRE_FULLVERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+export OPENFIRE_FULLVERSION=$(./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout)
 export OPENFIRE_VERSION=$(echo "${OPENFIRE_FULLVERSION}" | cut -d'-' -f1)
 export VERSION_MAJOR=$(echo "${OPENFIRE_VERSION}" | cut -d'.' -f1)
 export VERSION_MINOR=$(echo "${OPENFIRE_VERSION}" | cut -d'.' -f2)
