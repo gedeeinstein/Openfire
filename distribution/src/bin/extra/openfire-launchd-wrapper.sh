@@ -34,5 +34,5 @@ OPENFIRE_PID=$(ps auxww | grep -v wrapper | awk '/openfire/ && !/awk/ {print $2}
 # allow any signal which would kill a process to stop Openfire
 trap shutdown HUP INT QUIT ABRT KILL ALRM TERM TSTP
 
-echo "Waiting for `cat $OPENFIRE_PID`"
-wait `cat $OPENFIRE_PID`
+echo "Waiting for $OPENFIRE_PID"
+wait $OPENFIRE_PID
