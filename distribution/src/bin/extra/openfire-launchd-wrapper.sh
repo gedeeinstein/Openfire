@@ -27,7 +27,7 @@ JAVA_CMD_OPTS="$JAVA_CMD_OPTS -Djdk.tls.ephemeralDHKeySize=matched"
 JAVA_CMD_OPTS="$JAVA_CMD_OPTS -Djsse.SSLEngine.acceptLargeFragments=true"
 JAVA_CMD_OPTS="$JAVA_CMD_OPTS -Djava.net.preferIPv6Addresses=system"
 
-/usr/bin/java $JAVA_CMD_OPTS -server $OPENFIRE_OPTS -jar "$OPENFIRE_HOME/lib/startup.jar" &
+/usr/bin/java $JAVA_CMD_OPTS -server $OPENFIRE_OPTS -classpath "$OPENFIRE_HOME/lib/startup.jar" -jar "$OPENFIRE_HOME/lib/startup.jar" &
 
 OPENFIRE_PID=$(ps auxww | grep -v wrapper | awk '/openfire/ && !/awk/ {print $2}')
 
